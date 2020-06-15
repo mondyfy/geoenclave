@@ -8,7 +8,8 @@
   },
   "keywords": [
     "loc-bind",
-    "location-binder"
+    "location-binder",
+    "location-validation"
   ],
   "author": "Sandip Basnet",
   "repository": {
