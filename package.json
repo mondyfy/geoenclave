@@ -1,6 +1,6 @@
 {
   "name": "loc-bind",
-  "version": "1.0.0",
+  "version": "1.0.4",
   "description": "Package that takes lat long array and validates geocoordinates if that lies inside it.",
   "main": "index.js",
   "scripts": {
