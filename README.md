@@ -21,7 +21,6 @@ $ yarn add loc-bind
 
 ```javascript
 const locBind = require('loc-bind');
-
 // Load core loc-bind.
 
 const polygonCoordinates = [
@@ -53,6 +52,8 @@ const polygonCoordinates = [
     [85.27268661724837, 27.703490979573274]];
 
 // Bounding coordinates of kathmandu valley
+/* polygon coordinates(clipping boundry geojson) can be easily exported from https://export.hotosm.org/en/v3/exports/newformats
+in Geopackage .gpkg format */
 
 const coordThamel = [85.3061304421, 27.709090497];
 const coordCharikot = [86.0333332, 27.666664];
