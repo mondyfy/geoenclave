@@ -3,7 +3,7 @@
 June. 15, 2020
 <br />
 
-Ever had the urge to validate location on a services like region based services? And wanted to validate geolocation in some sane, easy and cheapest way? Don't want to use third party apis, for whatever reason? Then loc-bind is what you're looking for!
+Ever had the urge to validate location on region based services? And wanted to validate geolocation in some sane and easy way? Don't want to use third party APIs', for whatever reason? Then loc-bind is what you're looking for!
 
 ## Description
 
@@ -52,7 +52,7 @@ const polygonCoordinates = [
     [85.27268661724837, 27.703490979573274]];
 
 // Bounding coordinates of kathmandu valley
-/* polygon coordinates(clipping boundry geojson) can be easily exported from https://export.hotosm.org/en/v3/exports/newformats
+/* polygon coordinates(clipping boundry geojson) can be easily exported from https://export.hotosm.org/
 in Geopackage .gpkg format */
 
 const coordThamel = [85.3061304421, 27.709090497];
