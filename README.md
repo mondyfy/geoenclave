@@ -21,11 +21,10 @@ $ yarn add geoenclave
 
 ## Usage
 
-```javascript
-const geoEnclave = require('geoenclave');
-// Load core geoenclave.
+```typescript
+import { inside } from 'geoenclave';
 
-const polygonCoordinates = [
+const polygon: [number, number][] = [
     [85.27268661724837, 27.703490979573274], 
     [85.27749313580306, 27.725070434748005], 
     [85.29328598248274, 27.73540274623595], 
@@ -57,20 +56,20 @@ const polygonCoordinates = [
 /* polygon coordinates(clipping boundry geojson) can be easily exported from https://export.hotosm.org/
 in Geopackage .gpkg format */
 
-const coordThamel = [85.3061304421, 27.709090497];
-const coordCharikot = [86.0333332, 27.666664];
+const coordThamel: [number, number]  = [85.3061304421, 27.709090497];
+const coordCharikot: [number, number]  = [86.0333332, 27.666664];
 
-console.log(geoEnclave.inside(coordThamel, polygonCoordinates));
-// returns true as thamel lies inside kathmandu valley
+console.log(inside(coordThamel, polygonCoordinates));
+// returns true as thamel is inside the kathmandu valley
 
-console.log(geoEnclave.inside(coordCharikot, polygonCoordinates));
-// returns false as charikot doesn't lie inside kathmandu valley
+console.log(inside(coordCharikot, polygonCoordinates));
+// returns false as charikot is outside the kathmandu valley
 
 ```
 
 ## Contribution ✨
 
-Any kinds of contributions are entertained.
+I believe that every individual's expertise, creativity, and effort can contribute to the growth and improvement of this project. Whether you're a developer, designer, tester, or a documentation enthusiast, your unique perspective and skills can help me achieve excellence.Remember, contributions aren't just lines of code; they're the heartbeats of progress. Join me in making this project extraordinary! 🚀🌟
 
 
 ## Inspiration
