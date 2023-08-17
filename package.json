@@ -1,6 +1,6 @@
 {
   "name": "geoenclave",
-  "version": "2.0.0",
+  "version": "1.0.0",
   "description": "Validate if a point is inside a given polygon using GeoEnclave.",
   "main": "dist/index.js",
   "scripts": {
@@ -16,9 +16,14 @@
     "location-validation"
   ],
   "author": "Sandip Basnet",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/mondyfy/geoenclave"
+  "homepage": "https://github.com/mondyfy/geoenclave#readme",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "repository": "https://github.com/mondyfy/geoenclave.git",
+  "bugs": {
+    "url" : "https://github.com/mondyfy/geoenclave/issues",
+    "email" : "mondyfy@gmail.com"
   },
   "dependencies": {},
   "devDependencies": {
