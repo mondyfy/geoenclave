@@ -1,27 +1,29 @@
-# loc-bind
+# GeoEnclave
 
-June. 15, 2020
+August. 18, 2023
 <br />
 
-Ever had the urge to validate location on region based services? And wanted to validate geolocation in some sane and easy way? Don't want to use third party APIs', for whatever reason? Then loc-bind is what you're looking for!
+"GeoEnclave" essentially means a defined and secured geographical space where specific rules or validations can be applied.
 
 ## Description
 
-loc-bind is a tiny npm package that takes the bounded area in th form of polygon coordinates and checks if the point/location lat, long lies inside the bounded region or not.
+> Meet GeoEnclave, the game-changing npm package for effortless geolocation validation! 🌐🔍
+
+Say farewell to third-party APIs and hello to simplicity. With loc-bind, you're the boss. Define your bounded area using polygon coordinates, and let loc-bind work its magic. It checks if a point's latitude and longitude lie within your defined region. Your location, your rules – all in a tiny, powerful package. 📦📍 #OwnYourGeo
 
 ## Install
 
 ```
-$ npm i loc-bind
+$ npm i geoenclave
 or
-$ yarn add loc-bind
+$ yarn add geoenclave
 ```
 
 ## Usage
 
 ```javascript
-const locBind = require('loc-bind');
-// Load core loc-bind.
+const geoEnclave = require('geoenclave');
+// Load core geoenclave.
 
 const polygonCoordinates = [
     [85.27268661724837, 27.703490979573274], 
@@ -58,10 +60,10 @@ in Geopackage .gpkg format */
 const coordThamel = [85.3061304421, 27.709090497];
 const coordCharikot = [86.0333332, 27.666664];
 
-console.log(locBind.inside(coordThamel, polygonCoordinates));
+console.log(geoEnclave.inside(coordThamel, polygonCoordinates));
 // returns true as thamel lies inside kathmandu valley
 
-console.log(locBind.inside(coordCharikot, polygonCoordinates));
+console.log(geoEnclave.inside(coordCharikot, polygonCoordinates));
 // returns false as charikot doesn't lie inside kathmandu valley
 
 ```
@@ -77,3 +79,6 @@ Any kinds of contributions are entertained.
 [Point In Polygon](https://github.com/substack/point-in-polygon)
 
 [Robust Point In Polygon](https://github.com/mikolalysenko/robust-point-in-polygon)
+
+## License
+[MIT](LICENSE)
