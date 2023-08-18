@@ -22,7 +22,7 @@ $ yarn add geoenclave
 ## Usage
 
 ```typescript
-import { inside } from 'geoenclave';
+import { isPointInsidePolygon, countPointsInsidePolygon } from 'geoenclave';
 
 const polygon: [number, number][] = [
     [85.27268661724837, 27.703490979573274], 
@@ -59,11 +59,14 @@ in Geopackage .gpkg format */
 const coordThamel: [number, number]  = [85.3061304421, 27.709090497];
 const coordCharikot: [number, number]  = [86.0333332, 27.666664];
 
-console.log(inside(coordThamel, polygonCoordinates));
+console.log(isPointInsidePolygon(coordThamel, polygonCoordinates));
 // returns true as thamel is inside the kathmandu valley
 
-console.log(inside(coordCharikot, polygonCoordinates));
+console.log(isPointInsidePolygon(coordCharikot, polygonCoordinates));
 // returns false as charikot is outside the kathmandu valley
+
+console.log(countPointsInsidePolygon([coordCharikot], polygonCoordinates));
+// returns 0 as charikot is outside the kathmandu valley
 
 ```
 
@@ -74,8 +77,6 @@ I believe that every individual's expertise, creativity, and effort can contribu
 
 ## Inspiration
 [Ray Casting Algorithm ](https://rosettacode.org/wiki/Ray-casting_algorithm#JavaScript)
-
-[Point In Polygon](https://github.com/substack/point-in-polygon)
 
 [Robust Point In Polygon](https://github.com/mikolalysenko/robust-point-in-polygon)
 

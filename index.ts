@@ -1,4 +1,8 @@
-const inside = (point: [number, number], polygon: [number, number][]): boolean => {
+
+type Point = [number, number];
+
+
+const isPointInsidePolygon = (point: Point, polygon: Point[]): boolean => {
     const x = point[0], y = point[1];
 
     let isInside = false;
@@ -13,4 +17,16 @@ const inside = (point: [number, number], polygon: [number, number][]): boolean =
     return isInside;
 };
 
-export { inside };
+const countPointsInsidePolygon = (points: Point[], polygon: Point[]): number => {
+    let count = 0;
+
+    for (const point of points) {
+        if (isPointInsidePolygon(point, polygon)) {
+            count++;
+        }
+    }
+
+    return count;
+}
+
+export { isPointInsidePolygon, countPointsInsidePolygon };
