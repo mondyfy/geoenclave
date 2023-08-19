@@ -1,6 +1,4 @@
-
 type Point = [number, number];
-
 
 const isPointInsidePolygon = (point: Point, polygon: Point[]): boolean => {
     const x = point[0], y = point[1];

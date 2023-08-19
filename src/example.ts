@@ -1,29 +1,3 @@
-# GeoEnclave
-
-August. 19, 2023
-<br />
-
-"GeoEnclave" essentially means a defined and secured geographical space where specific rules or validations can be applied.
-
-## Description
-
-> Meet GeoEnclave, the game-changing npm package for effortless geolocation validation! 🌐🔍
-
-Say farewell to third-party APIs and hello to simplicity. With geoenclave, you're the boss. Define your bounded area using polygon coordinates, and let geoenclave work its magic. It checks if a point's latitude and longitude lie within your defined region. Your location, your rules – all in a tiny, powerful package. 📦📍 #OwnYourGeo
-
-## Install
-
-```
-npm i geoenclave
-``
-or
-```
-yarn add geoenclave
-```
-
-## Usage
-
-```typescript
 import { isPointInsidePolygon, countPointsInsidePolygon } from 'geoenclave';
 
 const polygonCoordinates: [number, number][] = [
@@ -72,35 +46,3 @@ console.log(countPointsInsidePolygon([coordThamel], polygonCoordinates));
 
 console.log(countPointsInsidePolygon([coordCharikot], polygonCoordinates));
 // returns 0 as charikot is outside the kathmandu valley
-
-```
-
-## Examples
-
-```bash
-# clone repo
-
-git clone `https://github.com/mondyfy/geoenclave.git`;
-
-# change directory
-cd geoenclave
-
-# run exampe
-npm run sample
-
-# or
-ts-node src/example.ts
-```
-
-## Contribution ✨
-
-I believe that every individual's expertise, creativity, and effort can contribute to the growth and improvement of this project. Whether you're a developer, designer, tester, or a documentation enthusiast, your unique perspective and skills can help me achieve excellence.Remember, contributions aren't just lines of code; they're the heartbeats of progress. Join me in making this project extraordinary! 🚀🌟
-
-
-## Inspiration
-[Ray Casting Algorithm ](https://rosettacode.org/wiki/Ray-casting_algorithm#JavaScript)
-
-[Robust Point In Polygon](https://github.com/mikolalysenko/robust-point-in-polygon)
-
-## License
-[MIT](LICENSE)
