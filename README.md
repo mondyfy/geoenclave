@@ -82,12 +82,12 @@ console.log(countPointsInsidePolygon([coordCharikot], polygonCoordinates));
 ```bash
 # clone repo
 
-git clone `https://github.com/mondyfy/geoenclave.git`;
+git clone https://github.com/mondyfy/geoenclave.git
 
 # change directory
 cd geoenclave
 
-# run exampe
+# run example
 npm run sample
 
 # or
