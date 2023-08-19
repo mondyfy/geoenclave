@@ -1,6 +1,6 @@
 {
   "name": "geoenclave",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Validate if a point is inside a given polygon using GeoEnclave.",
   "main": "dist/index.js",
   "scripts": {

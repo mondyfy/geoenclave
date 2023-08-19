@@ -86,6 +86,9 @@ git clone https://github.com/mondyfy/geoenclave.git
 # change directory
 cd geoenclave
 
+# install dependencies
+npm i
+
 # run example
 npm run sample
 
