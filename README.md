@@ -15,8 +15,10 @@ Say farewell to third-party APIs and hello to simplicity. With geoenclave, you'r
 
 ```
 npm i geoenclave
-``
+```
+
 or
+
 ```
 yarn add geoenclave
 ```
