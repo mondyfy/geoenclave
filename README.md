@@ -26,54 +26,172 @@ yarn add geoenclave
 ## Usage
 
 ```typescript
-import { isPointInsidePolygon, countPointsInsidePolygon } from 'geoenclave';
+import { isPointInsidePolygon, countPointsInsidePolygon, ALGORITHMS } from 'geoenclave';
 
-const polygonCoordinates: [number, number][] = [
-    [85.27268661724837, 27.703490979573274], 
-    [85.27749313580306, 27.725070434748005], 
-    [85.29328598248274, 27.73540274623595], 
-    [85.30324234234602, 27.743607119292363], 
-    [85.31854215362551, 27.745555735266393], 
-    [85.3360138263724, 27.738878392849898], 
-    [85.34474966274584, 27.738175490892473], 
-    [85.35785341730602, 27.74204139554027], 
-    [85.37702933059592, 27.740436376090585], 
-    [85.38020666589044, 27.73418697607903], 
-    [85.3664382129475, 27.725437213950002], 
-    [85.37208680902667, 27.72324966367269], 
-    [85.36369018833157, 27.71617064338767], 
-    [85.35809244120152, 27.709445148471318], 
-    [85.35369421131361, 27.701303205095897], 
-    [85.36209083200872, 27.696346942112896], 
-    [85.37288648718811, 27.698471082380422], 
-    [85.35755476849451, 27.67997373762509], 
-    [85.33590205625748, 27.666213135028443], 
-    [85.32868376564718, 27.657939519996958], 
-    [85.31382257909662, 27.66170033173455], 
-    [85.30065981386609, 27.673358025817663], 
-    [85.29046928594569, 27.68539046996179], 
-    [85.2802787580253, 27.688022390418126], 
-    [85.27136204609495, 27.69441393311658], 
-    [85.27268661724837, 27.703490979573274]];
+const kathmanduRingRoadPolygon: [number, number][] = [
+    [
+        27.72766858385793,
+        85.30444243773503
+    ],
+    [
+        27.73517829739761,
+        85.30549163862372
+    ],
+    [
+        27.735093921220887,
+        85.31560211372258
+    ],
+    [
+        27.73568455134787,
+        85.32027582534324
+    ],
+    [
+        27.739481382740536,
+        85.32695255398438
+    ],
+    [
+        27.742417571012687,
+        85.33200779415357
+    ],
+    [
+        27.740055177866815,
+        85.33706302908323
+    ],
+    [
+        27.736342740875475,
+        85.34145060215174
+    ],
+    [
+        27.729761292929318,
+        85.34536125667536
+    ],
+    [
+        27.724023297456096,
+        85.34478895861308
+    ],
+    [
+        27.718622554009244,
+        85.34688736039044
+    ],
+    [
+        27.707567070095383,
+        85.34354899345013
+    ],
+    [
+        27.705879116033017,
+        85.34621969328974
+    ],
+    [
+        27.706554299864546,
+        85.35032110684816
+    ],
+    [
+        27.704613128712317,
+        85.35251488814289
+    ],
+    [
+        27.701068288851545,
+        85.35222874959072
+    ],
+    [
+        27.698873810000922,
+        85.3550901979862
+    ],
+    [
+        27.69507556479407,
+        85.35518558798255
+    ],
+    [
+        27.684777431536556,
+        85.34927191119894
+    ],
+    [
+        27.677601930027333,
+        85.34936729071633
+    ],
+    [
+        27.669919398598278,
+        85.33801684521507
+    ],
+    [
+        27.664600408339666,
+        85.32981400761929
+    ],
+    [
+        27.659112289409926,
+        85.32599873261309
+    ],
+    [
+        27.658099065096362,
+        85.3225649861554
+    ],
+    [
+        27.666035718989683,
+        85.31121454589359
+    ],
+    [
+        27.66730215363662,
+        85.30787617895328
+    ],
+    [
+        27.6746471731087,
+        85.30215327168344
+    ],
+    [
+        27.68393327690198,
+        85.30196250740914
+    ],
+    [
+        27.685199504088306,
+        85.2948088654626
+    ],
+    [
+        27.688407210514445,
+        85.2871783180699
+    ],
+    [
+        27.689926617266245,
+        85.2832676635463
+    ],
+    [
+        27.693809447504254,
+        85.28155079031747
+    ],
+    [
+        27.705457118800823,
+        85.28202769838335
+    ],
+    [
+        27.717694270341777,
+        85.28364918947506
+    ],
+    [
+        27.718875715959076,
+        85.28507991891227
+    ],
+    [
+        27.72385452544807,
+        85.29557192255967
+    ]];
+  
+  const coordThamel: [number, number] = [27.717028, 85.311256];
+  const coordCharikot: [number, number] = [27.666664, 86.0333332];
 
-// Bounding coordinates of kathmandu valley
-/* polygon coordinates(clipping boundry geojson) can be easily exported from https://export.hotosm.org/
-in Geopackage .gpkg format */
+// Bounding coordinates of kathmandu ringroad
+/* polygon coordinates(clipping boundry geojson) can be easily exported from https://export.hotosm.org/ in Geopackage .gpkg format or ypu case use any polygon drawing tool on top of any map */
 
-const coordThamel: [number, number]  = [85.3061304421, 27.709090497];
-const coordCharikot: [number, number]  = [86.0333332, 27.666664];
 
-console.log(isPointInsidePolygon(coordThamel, polygonCoordinates));
-// returns true as thamel is inside the kathmandu valley
+console.log(isPointInsidePolygon(coordThamel, kathmanduRingRoadPolygon, ALGORITHMS.RAYCASTING));
+// returns true as thamel is inside the kathmandu ring road
 
-console.log(isPointInsidePolygon(coordCharikot, polygonCoordinates));
-// returns false as charikot is outside the kathmandu valley
+console.log(isPointInsidePolygon(coordCharikot, kathmanduRingRoadPolygon, ALGORITHMS.RAYCASTING));
+// returns false as charikot is outside the kathmandu ring road
 
-console.log(countPointsInsidePolygon([coordThamel], polygonCoordinates));
-// returns 1 as thamel is inside the kathmandu valley
+console.log(countPointsInsidePolygon([coordThamel], kathmanduRingRoadPolygon, ALGORITHMS.RAYCASTING));
+// returns 1 as thamel is inside the kathmandu ring road
 
-console.log(countPointsInsidePolygon([coordCharikot], polygonCoordinates));
-// returns 0 as charikot is outside the kathmandu valley
+console.log(countPointsInsidePolygon([coordCharikot], kathmanduRingRoadPolygon, ALGORITHMS.RAYCASTING));
+// returns 0 as charikot is outside the kathmandu ring road
 
 ```
 

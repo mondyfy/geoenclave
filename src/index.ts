@@ -1,30 +1,28 @@
-type Point = [number, number];
+export * from './types';
+import { ALGORITHMS, Point } from "./types";
+import { isPointPolygon, countPointsInPolygon } from './raycasting';
+import { isWindingNumber, countWindingNumbers } from './windingnumber';
 
-const isPointInsidePolygon = (point: Point, polygon: Point[]): boolean => {
-    const x = point[0], y = point[1];
-
-    let isInside = false;
-    for (let i = 0, j = polygon.length - 1; i < polygon.length; j = i++) {
-        const xi = polygon[i][0], yi = polygon[i][1];
-        const xj = polygon[j][0], yj = polygon[j][1];
-
-        const isIntersect = ((yi > y) !== (yj > y))
-            && (x < (xj - xi) * (y - yi) / (yj - yi) + xi);
-        if (isIntersect) isInside = !isInside;
-    }
-    return isInside;
+const isPointInsidePolygon = (point: Point, polygon: Point[], algorithm: ALGORITHMS): boolean => {
+    switch(algorithm) {
+        case ALGORITHMS.RAYCASTING:
+          return isPointPolygon(point, polygon);
+        case ALGORITHMS.WINDINGNUMBER:
+            return isWindingNumber(point, polygon);
+        default:
+          return isWindingNumber(point, polygon);
+      }
 };
 
-const countPointsInsidePolygon = (points: Point[], polygon: Point[]): number => {
-    let count = 0;
-
-    for (const point of points) {
-        if (isPointInsidePolygon(point, polygon)) {
-            count++;
-        }
-    }
-
-    return count;
+const countPointsInsidePolygon = (points: Point[], polygon: Point[], algorithm: ALGORITHMS): number => {
+    switch(algorithm) {
+        case ALGORITHMS.RAYCASTING:
+          return countPointsInPolygon(points, polygon);
+        case ALGORITHMS.WINDINGNUMBER:
+            return countWindingNumbers(points, polygon);
+        default:
+          return countWindingNumbers(points, polygon);
+      }
 }
 
 export { isPointInsidePolygon, countPointsInsidePolygon };
