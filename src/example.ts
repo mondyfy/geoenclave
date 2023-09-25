@@ -1,6 +1,6 @@
-import { isPointInsidePolygon, countPointsInsidePolygon, ALGORITHMS } from '../src';
+import { isPointInsidePolygon, countPointsInsidePolygon, ALGORITHMS, Point } from '../src';
 
-const kathmanduRingRoadPolygon: [number, number][] = [
+const kathmanduRingRoadPolygon: Point[] = [
     [
         27.72766858385793,
         85.30444243773503
@@ -145,9 +145,9 @@ const kathmanduRingRoadPolygon: [number, number][] = [
         27.72385452544807,
         85.29557192255967
     ]];
-  
-  const coordThamel: [number, number] = [27.717028, 85.311256];
-  const coordCharikot: [number, number] = [27.666664, 86.0333332];
+
+const coordThamel: Point = [27.717028, 85.311256];
+const coordCharikot: Point = [27.666664, 86.0333332];
 
 // Bounding coordinates of kathmandu ringroad
 /* polygon coordinates(clipping boundry geojson) can be easily exported from https://export.hotosm.org/

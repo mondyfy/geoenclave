@@ -4,7 +4,7 @@ const isLeft = (p1: Point, p2: Point, point: Point): number => {
     return (p2[1] - p1[1]) * (point[0] - p1[0]) - (point[1] - p1[1]) * (p2[0] - p1[0]);
 }
 
-const windingNumber = (lat:number, lng: number, polygon: Point[]): number => {
+const windingNumber = (lat: number, lng: number, polygon: Point[]): number => {
     const polygonLength = polygon.length;
     let wn = 0;
 

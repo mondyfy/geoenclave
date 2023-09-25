@@ -26,9 +26,9 @@ yarn add geoenclave
 ## Usage
 
 ```typescript
-import { isPointInsidePolygon, countPointsInsidePolygon, ALGORITHMS } from 'geoenclave';
+import { isPointInsidePolygon, countPointsInsidePolygon, ALGORITHMS, Point } from 'geoenclave';
 
-const kathmanduRingRoadPolygon: [number, number][] = [
+const kathmanduRingRoadPolygon: Point[] = [
     [
         27.72766858385793,
         85.30444243773503
@@ -174,8 +174,8 @@ const kathmanduRingRoadPolygon: [number, number][] = [
         85.29557192255967
     ]];
   
-  const coordThamel: [number, number] = [27.717028, 85.311256];
-  const coordCharikot: [number, number] = [27.666664, 86.0333332];
+  const coordThamel: Point = [27.717028, 85.311256];
+  const coordCharikot: Point = [27.666664, 86.0333332];
 
 // Bounding coordinates of kathmandu ringroad
 /* polygon coordinates(clipping boundry geojson) can be easily exported from https://export.hotosm.org/ in Geopackage .gpkg format or ypu case use any polygon drawing tool on top of any map */
